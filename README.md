@@ -1,57 +1,67 @@
-Accident_severity
-==============================
+# Accident Severity Analysis
 
-Analyzing motor and vehicle crashes
+Analyzing over 7 million US traffic accident records (2016–2023) to uncover patterns, predict severity, and deliver actionable insights through dashboards and machine learning.
 
-Project Organization
-------------
+---
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+## 1. Executive Summary
 
+**Problem:**  
+Traffic accidents cause major societal and economic losses in the US. Understanding when, where, and why severe accidents happen can help save lives.
 
---------
+**Solution:**  
+We analyzed 7M+ accident records using exploratory data analysis (EDA), built a machine learning classification model to predict severity, and created an interactive dashboard for stakeholders to explore insights.
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+**Impact:**  
+- Identified high-risk locations and peak times.
+- Built a predictive model with promising performance.
+- Delivered visual insights that can guide safety policies and emergency responses.
+
+---
+
+## 2. Business Problem & Objective
+
+- **Why this matters:** Improving road safety and emergency response efficiency.
+- **Who benefits:** Traffic management authorities, city planners, emergency responders.
+- **Goal:** Help stakeholders anticipate accident severity based on real-time data.
+
+---
+
+## 3. Data & Methodology
+
+- **Dataset:** US traffic accidents (2016–2023), ~7.2M records.
+- **Process:** Followed the CRISP-DM process — from data cleaning, EDA, feature engineering, to model training and dashboard deployment.
+- **ML Pipeline (FTI):**
+  - **Features:** Time, location, weather, and road conditions.
+  - **Training:** Used classification algorithms (Logistic Regression, Random Forest, XGBoost).
+  - **Inference:** Severity level prediction.
+- **Tools & Tech:** Python, Pandas, scikit-learn, Plotly Dash, Jupyter, Git.
+
+---
+
+## 4. Results & Insights
+
+- Found that accidents are most severe at night and during adverse weather.
+- Certain US states and intersections are high-risk clusters.
+- Predictive model achieved strong accuracy in classifying severity levels.
+- Visual dashboard enables filtering by time, region, and cause.
+
+---
+
+## 5. Conclusion & Next Steps
+
+- **Takeaways:** Data science can uncover patterns that improve public safety.
+- **Next steps:** Enhance real-time prediction and integrate live traffic data.
+- **Limitations:** Some records had missing or imbalanced data; further cleaning and augmentation could improve results.
+
+---
+
+## 6. Technical Setup
+
+To run the project locally:
+
+```bash
+git clone https://github.com/AmerrMohamedd/accident_severity_analysis.git
+cd accident_severity_analysis
+pip install -r requirements.txt
+jupyter notebook
